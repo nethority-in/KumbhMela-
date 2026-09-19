@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0c0b">
+<meta name="color-scheme" content="dark light">
+<title>Simhastha Kumbh Mela 2027 · Nashik &amp; Trimbakeshwar — A Visitor's Guide</title>
+<meta name="description" content="An independent, mobile-first visitor guide to the 2027 Nashik–Trimbakeshwar Simhastha Kumbh Mela: bathing days, the two sacred waters, how to reach Nashik, and how to travel gently. Dates approximate — confirm with local authorities.">
+<meta name="robots" content="index, follow">
+
+<!-- Set JS / motion flags before paint to avoid a flash of hidden content -->
+<script>
+(function () {
+  var motionOK = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  document.documentElement.className = 'js' + (motionOK ? ' motion' : '');
+})();
+</script>
+
+<style>
+/* ---------- Tokens ---------- */
+:root{
+  --ink:#0d0c0b;            /* near-black            */
+  --ink-2:#15131a;          /* night, slightly blue  */
+  --cream:#f4efe6;          /* off-white             */
+  --cream-2:#efe7d8;
+  --saffron:#e0954a;        /* accent on dark        */
+  --saffron-deep:#a8531c;   /* accent on light (AA)  */
+  --marigold:#e9ad4e;
+  --river:#357189;          /* river-blue            */
+  --river-deep:#1b3b48;
+  --muted-dark:#cdc3b4;     /* soft text on dark     */
+  --muted-light:#5d564b;    /* soft text on light    */
+  --line-dark:rgba(244,239,230,.16);
+  --line-light:rgba(21,19,26,.14);
+  --maxw:1080px;
+  --pad:clamp(1.25rem, 5vw, 3rem);
+  --serif:'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,'Times New Roman',serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+
+/* ---------- Reset / base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--cream);
+  font-family:var(--sans);
+  font-size:clamp(1rem,0.96rem + 0.3vw,1.12rem);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%;display:block}
+h1,h2,h3{font-weight:600;line-height:1.12;margin:0}
+p{margin:0}
+a{color:inherit}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit}
+
+/* ---------- Helpers ---------- */
+.visually-hidden{
+  position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.serif{font-family:var(--serif)}
+.kicker{
+  font-family:var(--sans);font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--saffron);margin:0 0 1.4rem;font-weight:600;
+}
+.section--light .kicker{color:var(--saffron-deep)}
+.lede{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(1.7rem,1.2rem + 3.4vw,3rem);
+  line-height:1.18;letter-spacing:-.01em;max-width:18ch;
+}
+.prose{max-width:60ch;margin-top:1.6rem;color:var(--muted-dark)}
+.section--light .prose{color:var(--muted-light)}
+.prose p + p{margin-top:1.1rem}
+
+/* ---------- Skip link ---------- */
+.skip{
+  position:fixed;left:1rem;top:-100px;z-index:200;background:var(--cream);color:var(--ink);
+  padding:.7rem 1.1rem;border-radius:.4rem;transition:top .2s;text-decoration:none;font-weight:600;
+}
+.skip:focus{top:1rem}
+
+/* ---------- Focus ---------- */
+:focus-visible{outline:2px solid var(--marigold);outline-offset:3px;border-radius:3px}
+
+/* ---------- Header ---------- */
+.site-head{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.85rem var(--pad);
+  background:linear-gradient(to bottom,rgba(13,12,11,.55),rgba(13,12,11,0));
+  transition:background .4s ease, backdrop-filter .4s ease;
+}
+.site-head.is-stuck{
+  background:rgba(13,12,11,.82);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line-dark);
+}
+.brand{font-family:var(--serif);font-size:1.02rem;letter-spacing:.02em;text-decoration:none;color:var(--cream)}
+.brand b{color:var(--saffron);font-weight:600}
+.nav{display:none;gap:1.6rem;align-items:center}
+.nav a{font-size:.86rem;letter-spacing:.04em;color:var(--muted-dark);text-decoration:none;padding:.4rem .1rem}
+.nav a:hover{color:var(--cream)}
+.tag{
+  font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark);
+  border:1px solid var(--line-dark);border-radius:999px;padding:.3rem .7rem;white-space:nowrap;
+}
+@media (min-width:760px){ .nav{display:flex} }
+
+/* ---------- Section frame ---------- */
+.section{
+  position:relative;
+  padding-block:clamp(5rem,9vw + 2rem,11rem);
+  scroll-margin-top:64px;
+}
+.section--light{background:var(--cream);color:var(--ink)}
+.section--night{background:var(--ink-2)}
+.section--river{background:var(--river-deep)}
+
+/* ---------- Reveal-on-scroll (only when JS + motion allowed) ---------- */
+html.js.motion .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+html.js.motion .reveal.is-in{opacity:1;transform:none}
+html.js.motion .reveal.d1{transition-delay:.08s}
+html.js.motion .reveal.d2{transition-delay:.16s}
+html.js.motion .reveal.d3{transition-delay:.24s}
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#0d1326}
+.hero-scene{position:absolute;inset:0;width:100%;height:100%;will-change:transform}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,7,10,.78) 0%,rgba(8,7,10,.30) 38%,rgba(8,7,10,0) 70%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:var(--maxw);margin-inline:auto;padding:0 var(--pad) clamp(3rem,9vh,6rem)}
+.hero h1{margin:0;display:block}
+.hero .eyebrow{
+  display:block;font-family:var(--sans);font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--marigold);margin-bottom:1.3rem;font-weight:600;
+}
+.hero .poem{
+  display:block;font-family:var(--serif);font-weight:500;
+  font-size:clamp(2.3rem,1.1rem + 6.4vw,5rem);line-height:1.04;letter-spacing:-.015em;
+  text-wrap:balance;color:#fbf4e6;text-shadow:0 2px 30px rgba(0,0,0,.45);
+}
+.hero .poem .soft{color:var(--saffron);font-style:italic}
+
+/* Countdown */
+.countdown{margin-top:clamp(2rem,5vh,3.2rem)}
+.cd-label{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-dark)}
+.cd-target{font-family:var(--serif);font-size:1.15rem;color:var(--cream);margin-top:.35rem;font-style:italic}
+.cd-clock{display:flex;gap:clamp(.9rem,3vw,1.8rem);margin-top:1.1rem;flex-wrap:wrap}
+.cd-unit{display:flex;flex-direction:column;align-items:flex-start;min-width:3.1rem}
+.cd-num{
+  font-family:var(--serif);font-variant-numeric:tabular-nums;
+  font-size:clamp(1.9rem,1.2rem + 2.6vw,2.8rem);line-height:1;color:#fbf4e6;font-weight:500;
+}
+.cd-u{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-dark);margin-top:.45rem}
+.cd-done{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--saffron);margin-top:.6rem;max-width:30ch}
+
+/* scroll cue */
+.scroll-cue{
+  position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-dark);
+}
+.scroll-cue .line{width:1px;height:34px;background:linear-gradient(var(--marigold),transparent);transform-origin:top}
+html.motion .scroll-cue .line{animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+/* ---- Hero SVG animation ---- */
+html.motion .mist{animation:drift 26s ease-in-out infinite alternate}
+html.motion .mist-2{animation:drift 34s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:translateX(-26px)}to{transform:translateX(26px)}}
+html.motion .ripples{animation:ripple 7s ease-in-out infinite}
+@keyframes ripple{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(3px);opacity:.85}}
+html.motion .twinkle{animation:tw 4s ease-in-out infinite}
+html.motion .twinkle.b{animation-duration:6s;animation-delay:1.2s}
+html.motion .twinkle.c{animation-duration:5s;animation-delay:.6s}
+@keyframes tw{0%,100%{opacity:.25}50%{opacity:.9}}
+.flame-grp{transform-origin:center bottom}
+html.motion .flame-grp{animation:flick 2.6s ease-in-out infinite}
+html.motion .flame-grp.f2{animation-duration:3.1s;animation-delay:.5s}
+html.motion .flame-grp.f3{animation-duration:2.2s;animation-delay:1s}
+@keyframes flick{0%,100%{transform:scale(1) translateY(0);opacity:.95}45%{transform:scale(.9,1.08) translateY(-.4px);opacity:1}70%{transform:scale(1.04,.96);opacity:.85}}
+
+/* =====================================================================
+   ASTRONOMY (the why)
+   ===================================================================== */
+.sky-field{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9}
+.why-grid{position:relative;display:grid;gap:clamp(2.5rem,6vw,4.5rem);align-items:center}
+@media (min-width:820px){ .why-grid{grid-template-columns:1.05fr .95fr} }
+.constellation{width:100%;max-width:460px;margin-inline:auto}
+html.motion .jupiter{animation:enter 9s ease-in-out infinite alternate}
+@keyframes enter{from{transform:translateX(34px);opacity:.5}to{transform:translateX(0);opacity:1}}
+.jupiter-core{filter:drop-shadow(0 0 8px rgba(233,173,78,.9))}
+.note-orbit{
+  margin-top:2rem;padding:1.1rem 1.3rem;border-left:2px solid var(--saffron);
+  background:rgba(224,149,74,.06);border-radius:0 .5rem .5rem 0;color:var(--muted-dark);font-size:.96rem;
+}
+
+/* =====================================================================
+   FILTER — which day should I go?
+   ===================================================================== */
+.filter-toggles{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.4rem}
+.chip{
+  border:1px solid var(--line-light);background:transparent;color:var(--ink);
+  padding:.7rem 1.1rem;border-radius:999px;cursor:pointer;min-height:44px;
+  letter-spacing:.01em;transition:background .25s,border-color .25s,color .25s,transform .12s;
+}
+.chip:hover{border-color:var(--saffron-deep)}
+.chip:active{transform:translateY(1px)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.chip[aria-pressed="true"]::before{content:"✓ ";color:var(--marigold)}
+.filter-hint{margin-top:1rem;font-size:.9rem;color:var(--muted-light)}
+
+.day-list{display:grid;gap:1rem;margin-top:2.4rem}
+@media (min-width:680px){ .day-list{grid-template-columns:1fr 1fr} }
+.day{
+  border:1px solid var(--line-light);border-radius:.9rem;padding:1.4rem 1.5rem;background:#fbf7ef;
+  display:flex;flex-direction:column;gap:.6rem;transition:opacity .4s ease,transform .4s ease;
+}
+.day[hidden]{display:none}
+.day .d-date{font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
+.day .d-name{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--saffron-deep);font-weight:600}
+.day .d-note{font-size:.96rem;color:var(--muted-light)}
+.meter{display:inline-flex;align-items:center;gap:.5rem;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-top:.2rem}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(21,19,26,.18)}
+.level-high .dots i{background:#b8431f}
+.level-medium .dots i:nth-child(-n+2){background:#c98a2e}
+.level-low .dots i:nth-child(1){background:#3f7d52}
+.level-high{color:#a83216}
+.level-medium{color:#9a6512}
+.level-low{color:#2f6b45}
+
+/* =====================================================================
+   TWO LOCATIONS
+   ===================================================================== */
+.two{display:grid;gap:1.2rem;margin-top:2.6rem}
+@media (min-width:780px){ .two{grid-template-columns:1fr 1fr} }
+.place{
+  border:1px solid var(--line-dark);border-radius:1rem;padding:clamp(1.5rem,3vw,2.2rem);
+  background:linear-gradient(160deg,rgba(53,113,137,.14),rgba(13,12,11,.1));position:relative;overflow:hidden;
+}
+.place h3{font-family:var(--serif);font-size:1.6rem;color:var(--cream)}
+.place .where{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--saffron);margin:.3rem 0 1.1rem;font-weight:600}
+.place .tagline{font-family:var(--serif);font-style:italic;color:var(--marigold);font-size:1.1rem;margin-bottom:1.3rem}
+.spec{display:flex;gap:.9rem;padding:.7rem 0;border-top:1px solid var(--line-dark);font-size:.95rem}
+.spec:last-of-type{border-bottom:1px solid var(--line-dark)}
+.spec dt{flex:0 0 6.4rem;color:var(--muted-dark);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding-top:.15rem}
+.spec dd{margin:0;color:var(--cream)}
+.caution{
+  margin-top:1.8rem;padding:1.1rem 1.3rem;border:1px dashed var(--line-dark);border-radius:.7rem;
+  color:var(--muted-dark);font-size:.92rem;max-width:70ch;
+}
+.caution b{color:var(--saffron)}
+
+/* =====================================================================
+   TIMELINE — key dates
+   ===================================================================== */
+.timeline{margin-top:3rem;position:relative;padding-left:1.6rem}
+.timeline::before{content:"";position:absolute;left:5px;top:.4rem;bottom:.4rem;width:2px;
+  background:linear-gradient(var(--saffron),rgba(224,149,74,.15));}
+.event{position:relative;padding:0 0 2.4rem .4rem}
+.event:last-child{padding-bottom:0}
+.event::before{content:"";position:absolute;left:-1.6rem;top:.35rem;width:12px;height:12px;border-radius:50%;
+  background:var(--ink-2);border:2px solid var(--saffron)}
+.event.peak::before{background:var(--saffron);box-shadow:0 0 0 4px rgba(224,149,74,.18)}
+.event .when{font-family:var(--serif);font-size:1.25rem;color:#fbf4e6}
+.event .what{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--saffron);font-weight:600;margin-bottom:.25rem}
+.event .ev-note{color:var(--muted-dark);font-size:.95rem;margin-top:.3rem}
+.expected{display:inline-block;margin-top:.5rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted-dark);border:1px solid var(--line-dark);border-radius:999px;padding:.2rem .6rem}
+
+/* =====================================================================
+   PRACTICAL
+   ===================================================================== */
+.cards{display:grid;gap:1.2rem;margin-top:2.6rem}
+@media (min-width:680px){ .cards{grid-template-columns:1fr 1fr} }
+.info{border:1px solid var(--line-light);border-radius:.9rem;padding:1.5rem 1.6rem;background:#fbf7ef}
+.info h3{font-size:1.15rem;display:flex;align-items:center;gap:.6rem;margin-bottom:.9rem;color:var(--ink)}
+.info h3 .ic{flex:0 0 auto;color:var(--saffron-deep)}
+.info p,.info li{color:var(--muted-light);font-size:.97rem}
+.info .row{padding:.55rem 0;border-top:1px solid var(--line-light);display:flex;gap:.8rem}
+.info .row:first-of-type{border-top:0}
+.info .row b{flex:0 0 4.2rem;color:var(--ink);font-weight:600}
+.checklist{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
+.checklist li{border:1px solid var(--line-light);border-radius:999px;padding:.35rem .8rem;font-size:.86rem;color:var(--muted-light)}
+.gentle{grid-column:1/-1;background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.gentle h3{color:var(--cream)}
+.gentle p{color:var(--muted-dark)}
+.gentle b{color:var(--marigold)}
+
+/* =====================================================================
+   CLOSING
+   ===================================================================== */
+.closing{
+  position:relative;min-height:92svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:6rem var(--pad);overflow:hidden;
+  background:radial-gradient(120% 80% at 50% 120%,rgba(53,113,137,.30),transparent 60%),var(--ink);
+}
+.closing .final{font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.9rem,1.2rem + 3.4vw,3.2rem);line-height:1.2;max-width:16ch;color:#fbf4e6;text-wrap:balance}
+.diya-wrap{margin:2.6rem 0 1rem}
+html.motion .diya{animation:bob 5.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+html.motion .diya-reflection{animation:bobref 5.5s ease-in-out infinite}
+@keyframes bobref{0%,100%{transform:translateY(0) scaleY(1);opacity:.32}50%{transform:translateY(6px) scaleY(.9);opacity:.18}}
+
+.disclaimer{
+  margin-top:1.5rem;max-width:46ch;color:var(--cream);font-size:1rem;line-height:1.65;
+  border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);padding:1.1rem 0;
+}
+.disclaimer strong{color:var(--saffron)}
+.fineprint{margin-top:1.4rem;max-width:52ch;color:var(--muted-dark);font-size:.86rem}
+
+/* ---------- Footer ---------- */
+.site-foot{background:var(--ink);color:var(--muted-dark);padding:2.6rem var(--pad);text-align:center;font-size:.84rem;border-top:1px solid var(--line-dark)}
+.site-foot a{color:var(--saffron)}
+.site-foot .blessing{font-family:var(--serif);font-style:italic;color:var(--cream);font-size:1rem;margin-bottom:1rem}
+
+/* ---------- Reduced motion: stop everything moving ---------- */
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .hero-scene{transform:none!important}
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head" id="siteHead">
+  <a class="brand" href="#top">Simhastha <b>2027</b></a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#why">Why now</a>
+    <a href="#choose">Which day</a>
+    <a href="#waters">Two waters</a>
+    <a href="#dates">Dates</a>
+    <a href="#plan">Plan</a>
+  </nav>
+  <span class="tag">Independent guide</span>
+</header>
+
+<main id="main">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <svg class="hero-scene" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMax slice"
+       role="img" aria-label="Dawn mist rising over the Godavari at first light; a soft sun low on the horizon, distant temple spires and silhouettes of pilgrims along the ghats, and small oil lamps glowing on dark water.">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0d1326"/>
+        <stop offset="0.34" stop-color="#243150"/>
+        <stop offset="0.58" stop-color="#5d4a4c"/>
+        <stop offset="0.74" stop-color="#a96b3c"/>
+        <stop offset="0.86" stop-color="#dba159"/>
+        <stop offset="1" stop-color="#f1cb8c"/>
+      </linearGradient>
+      <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#fff6df"/>
+        <stop offset="0.35" stop-color="#f8cf86"/>
+        <stop offset="1" stop-color="#f8cf86" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#cf9a63"/>
+        <stop offset="0.18" stop-color="#7a6750"/>
+        <stop offset="0.55" stop-color="#1d242b"/>
+        <stop offset="1" stop-color="#0a0d10"/>
+      </linearGradient>
+      <radialGradient id="diyaGlow" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#ffd98a"/>
+        <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <rect width="1200" height="800" fill="url(#sky)"/>
+
+    <!-- stars -->
+    <g fill="#fff">
+      <circle class="twinkle"   cx="120" cy="70"  r="1.6" opacity=".7"/>
+      <circle class="twinkle b" cx="300" cy="48"  r="1.2" opacity=".5"/>
+      <circle class="twinkle c" cx="520" cy="92"  r="1.5" opacity=".6"/>
+      <circle class="twinkle"   cx="760" cy="60"  r="1.1" opacity=".5"/>
+      <circle class="twinkle b" cx="980" cy="100" r="1.6" opacity=".7"/>
+      <circle class="twinkle c" cx="1090" cy="56" r="1.2" opacity=".5"/>
+      <circle class="twinkle"   cx="660" cy="130" r="1.0" opacity=".4"/>
+    </g>
+
+    <!-- sun glow + disc -->
+    <circle cx="600" cy="540" r="240" fill="url(#sun)"/>
+    <circle cx="600" cy="540" r="58" fill="#fff3d4"/>
+
+    <!-- mist -->
+    <g opacity=".5">
+      <ellipse class="mist"   cx="600" cy="500" rx="620" ry="34" fill="#e9d6b6" opacity=".30"/>
+      <ellipse class="mist-2" cx="500" cy="560" rx="540" ry="26" fill="#f3e6c9" opacity=".26"/>
+    </g>
+
+    <!-- far ghat + temple spires -->
+    <path d="M0,612 L120,604 L300,610 L520,600 L760,608 L980,602 L1200,610 L1200,640 L0,640 Z" fill="#1a1b28" opacity=".85"/>
+    <g fill="#13111c" opacity=".9">
+      <path d="M250,610 q14,-78 28,0 Z"/>
+      <rect x="244" y="600" width="40" height="14"/>
+      <path d="M905,610 q18,-104 36,0 Z"/>
+      <rect x="898" y="598" width="50" height="16"/>
+      <circle cx="923" cy="500" r="5"/>
+    </g>
+
+    <!-- near ghat -->
+    <path d="M0,634 L1200,628 L1200,660 L0,668 Z" fill="#0b0a0f"/>
+
+    <!-- distant pilgrims & sadhus on the ghat (no faces, in silhouette) -->
+    <g fill="#0a0809">
+      <g transform="translate(150,612)"><ellipse cx="0" cy="14" rx="6" ry="13"/><circle cx="0" cy="-2" r="4.4"/></g>
+      <g transform="translate(178,614)"><ellipse cx="0" cy="12" rx="5" ry="11"/><circle cx="0" cy="-2" r="3.8"/></g>
+      <g transform="translate(420,610)"><ellipse cx="0" cy="15" rx="6.4" ry="14"/><circle cx="0" cy="-3" r="4.6"/><rect x="8" y="-14" width="2" height="30"/></g>
+      <g transform="translate(690,613)"><ellipse cx="0" cy="13" rx="5.4" ry="12"/><circle cx="0" cy="-2" r="4"/></g>
+      <g transform="translate(715,615)"><ellipse cx="0" cy="11" rx="4.6" ry="10"/><circle cx="0" cy="-2" r="3.4"/></g>
+      <g transform="translate(960,611)"><ellipse cx="0" cy="15" rx="6.2" ry="13.5"/><circle cx="0" cy="-3" r="4.6"/><rect x="-10" y="-12" width="2" height="28"/></g>
+      <g transform="translate(1040,613)"><ellipse cx="0" cy="13" rx="5.2" ry="12"/><circle cx="0" cy="-2" r="3.8"/></g>
+    </g>
+
+    <!-- water -->
+    <rect y="650" width="1200" height="150" fill="url(#water)"/>
+    <!-- reflected sun streak -->
+    <ellipse cx="600" cy="700" rx="46" ry="70" fill="#f6cf8a" opacity=".22"/>
+
+    <!-- ripples -->
+    <g class="ripples" stroke="#f3d49a" stroke-opacity=".22" fill="none" stroke-width="1.4">
+      <path d="M120,690 q40,-7 80,0 t80,0 t80,0"/>
+      <path d="M520,716 q44,-8 88,0 t88,0 t88,0"/>
+      <path d="M300,742 q40,-6 80,0 t80,0 t80,0"/>
+      <path d="M780,700 q40,-7 80,0 t80,0"/>
+    </g>
+
+    <!-- floating diyas -->
+    <g>
+      <g transform="translate(360,706)">
+        <circle r="16" fill="url(#diyaGlow)"/>
+        <g class="flame-grp"><path d="M0,-3 C-4,-8 -2,-14 0,-18 C2,-14 4,-8 0,-3 Z" fill="#ffcf6e"/></g>
+        <ellipse cy="3" rx="9" ry="3.4" fill="#7a3b1e"/>
+      </g>
+      <g transform="translate(640,732)">
+        <circle r="14" fill="url(#diyaGlow)"/>
+        <g class="flame-grp f2"><path d="M0,-3 C-3,-7 -1.6,-12 0,-15 C1.6,-12 3,-7 0,-3 Z" fill="#ffd97f"/></g>
+        <ellipse cy="3" rx="8" ry="3" fill="#7a3b1e"/>
+      </g>
+      <g transform="translate(840,712)">
+        <circle r="15" fill="url(#diyaGlow)"/>
+        <g class="flame-grp f3"><path d="M0,-3 C-3.4,-7.5 -1.8,-13 0,-16.5 C1.8,-13 3.4,-7.5 0,-3 Z" fill="#ffcf6e"/></g>
+        <ellipse cy="3" rx="8.5" ry="3.2" fill="#7a3b1e"/>
+      </g>
+    </g>
+  </svg>
+
+  <div class="hero-veil" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <h1 id="hero-title">
+      <span class="eyebrow">Simhastha Kumbh Mela · Nashik &amp; Trimbakeshwar · 2027</span>
+      <span class="poem">Once in twelve years,<br>the river <span class="soft">remembers.</span></span>
+    </h1>
+
+    <div class="countdown" role="timer" aria-label="Countdown to the next sacred bathing day">
+      <p class="cd-label">Next sacred bathing day</p>
+      <p class="cd-target" id="cdTarget">—</p>
+      <div class="cd-clock" id="cdClock" aria-hidden="true">
+        <span class="cd-unit"><span class="cd-num" id="cdD">--</span><span class="cd-u">days</span></span>
+        <span class="cd-unit"><span class="cd-num" id="cdH">--</span><span class="cd-u">hours</span></span>
+        <span class="cd-unit"><span class="cd-num" id="cdM">--</span><span class="cd-u">minutes</span></span>
+        <span class="cd-unit"><span class="cd-num" id="cdS">--</span><span class="cd-u">seconds</span></span>
+      </div>
+      <p class="cd-done" id="cdDone" hidden></p>
+      <p class="visually-hidden" id="cdSR"></p>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true"><span>scroll</span><span class="line"></span></div>
+</section>
+
+<!-- ============================ WHY (astronomy) ============================ -->
+<section class="section section--night" id="why" aria-labelledby="why-title">
+  <svg class="sky-field" id="skyField" aria-hidden="true" preserveAspectRatio="xMidYMid slice"></svg>
+  <div class="wrap why-grid">
+    <div>
+      <p class="kicker reveal">Why now</p>
+      <h2 class="lede reveal d1" id="why-title">When Jupiter enters the Lion, the waters are called holy.</h2>
+      <div class="prose reveal d2">
+        <p>Every twelve years, Brihaspati — the planet Jupiter — finishes its slow walk through the zodiac and steps into Simha, the sign of the Lion.</p>
+        <p>Where this turning falls upon the Godavari, the old texts say the water carries a trace of amrita, the nectar of deathlessness. So the people come — not because a calendar tells them to, but because the sky has moved.</p>
+      </div>
+      <p class="note-orbit reveal d3">Jupiter takes close to twelve years to circle the sun. That long rhythm sets the Simhastha. Miss it, and the next is a childhood away.</p>
+    </div>
+
+    <div class="reveal d2">
+      <svg class="constellation" viewBox="0 0 400 300" role="img" aria-label="A stylized night sky showing the constellation Leo, the Lion, with the planet Jupiter drifting into it.">
+        <g stroke="#6f7fa0" stroke-width="1" fill="none" opacity=".5">
+          <path d="M150,205 L235,212 L262,178 L218,150 L150,205 M150,205 L158,160 L150,128 L128,114 L108,124 L104,150"/>
+        </g>
+        <g fill="#e9ecf5">
+          <circle cx="150" cy="205" r="3.4"/><circle cx="235" cy="212" r="2.4"/>
+          <circle cx="262" cy="178" r="2.8"/><circle cx="218" cy="150" r="2.2"/>
+          <circle cx="158" cy="160" r="2"/><circle cx="150" cy="128" r="2.2"/>
+          <circle cx="128" cy="114" r="2"/><circle cx="108" cy="124" r="1.8"/><circle cx="104" cy="150" r="1.8"/>
+        </g>
+        <text x="150" y="232" fill="#9aa6c2" font-size="11" font-family="system-ui" text-anchor="middle" letter-spacing="2">SIMHA · THE LION</text>
+        <g class="jupiter">
+          <circle class="jupiter-core" cx="196" cy="186" r="6.5" fill="#e9ad4e"/>
+          <text x="196" y="166" fill="#e9ad4e" font-size="11" font-family="system-ui" text-anchor="middle" letter-spacing="1.5">Guru · Jupiter</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CHOOSE A DAY ============================ -->
+<section class="section section--light" id="choose" aria-labelledby="choose-title">
+  <div class="wrap">
+    <p class="kicker reveal">Which day should I go?</p>
+    <h2 class="lede reveal d1" id="choose-title">Choose what you seek. The days will answer.</h2>
+    <p class="prose reveal d2">Tap one or more below. Crowd levels are rough guidance — the three royal bathing days draw the greatest multitudes; the long stretches between them are quiet and no less sacred.</p>
+
+    <div class="filter-toggles reveal d2" role="group" aria-label="Filter days by what you are seeking">
+      <button type="button" class="chip" data-goal="procession" aria-pressed="false">The akhara procession</button>
+      <button type="button" class="chip" data-goal="quiet" aria-pressed="false">Stillness, fewer crowds</button>
+      <button type="button" class="chip" data-goal="ritual" aria-pressed="false">A quiet ritual bath</button>
+    </div>
+    <p class="filter-hint" id="filterHint">Showing all days.</p>
+    <p class="visually-hidden" role="status" aria-live="polite" id="filterStatus"></p>
+
+    <ul class="day-list reveal d3" id="dayList">
+      <li class="day" data-goals="procession ritual">
+        <span class="d-name">Dhwajaarohan · the flags rise</span>
+        <span class="d-date">31 October 2026</span>
+        <span class="meter level-medium"><span class="dots"><i></i><i></i><i></i></span> Medium</span>
+        <span class="d-note">The mela opens. Akhara banners are raised; the orders mark their ground. Ceremony, not yet the great bathing.</span>
+      </li>
+      <li class="day" data-goals="procession ritual">
+        <span class="d-name">First Amrit Snan · royal bath</span>
+        <span class="d-date">2 August 2027</span>
+        <span class="meter level-high"><span class="dots"><i></i><i></i><i></i></span> High</span>
+        <span class="d-note">Before dawn, the akharas process to the water in procession. The most charged morning to witness the sadhus.</span>
+      </li>
+      <li class="day" data-goals="quiet ritual">
+        <span class="d-name">The weeks between</span>
+        <span class="d-date">Through August 2027</span>
+        <span class="meter level-low"><span class="dots"><i></i><i></i><i></i></span> Lower</span>
+        <span class="d-note">Ordinary days on the ghats. The stone breathes. The river feels, for a while, like yours alone.</span>
+      </li>
+      <li class="day" data-goals="procession ritual">
+        <span class="d-name">Second Amrit Snan · royal bath</span>
+        <span class="d-date">31 August 2027</span>
+        <span class="meter level-high"><span class="dots"><i></i><i></i><i></i></span> High</span>
+        <span class="d-note">Often the principal bathing day, and the densest. Roads near the ghats fill hours before first light.</span>
+      </li>
+      <li class="day" data-goals="procession ritual">
+        <span class="d-name">Third Amrit Snan · royal bath</span>
+        <span class="d-date">11–12 September 2027</span>
+        <span class="meter level-high"><span class="dots"><i></i><i></i><i></i></span> High</span>
+        <span class="d-note">The processions return for the last great bath. Immense, solemn, unforgettable.</span>
+      </li>
+      <li class="day" data-goals="quiet ritual">
+        <span class="d-name">After the peaks</span>
+        <span class="d-date">Late September 2027 onward</span>
+        <span class="meter level-low"><span class="dots"><i></i><i></i><i></i></span> Lower</span>
+        <span class="d-note">Fewer feet on the stone. A gentle window for a contemplative bath and darshan.</span>
+      </li>
+      <li class="day" data-goals="ritual quiet">
+        <span class="d-name">Dhwajavarohan · the flags come down</span>
+        <span class="d-date">~24 July 2028</span>
+        <span class="meter level-medium"><span class="dots"><i></i><i></i><i></i></span> Medium</span>
+        <span class="d-note">The closing rite. The waters settle, and the gathering disperses for another twelve years.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ TWO WATERS ============================ -->
+<section class="section section--river" id="waters" aria-labelledby="waters-title">
+  <div class="wrap">
+    <p class="kicker reveal">Two waters, one river</p>
+    <h2 class="lede reveal d1" id="waters-title">The bathing is shared between two sacred kunds.</h2>
+    <p class="prose reveal d2">Unlike other Kumbh sites, here the holy bath is held in two places — the Godavari at Nashik, and the river's own source at Trimbakeshwar, about thirty kilometres west.</p>
+
+    <div class="two">
+      <article class="place reveal d2">
+        <h3>Nashik</h3>
+        <p class="where">Ram Kund · on the Godavari</p>
+        <p class="tagline">In the heart of the city, where the river gathers.</p>
+        <dl>
+          <div class="spec"><dt>Distance</dt><dd>Nashik city centre, Panchavati</dd></div>
+          <div class="spec"><dt>The water</dt><dd>Ram Kund, long tied to the memory of Lord Ram</dd></div>
+          <div class="spec"><dt>Who gathers</dt><dd>The Vaishnava (Bairagi) akharas — followers of Vishnu and Ram — are traditionally recorded as bathing here</dd></div>
+        </dl>
+      </article>
+
+      <article class="place reveal d3">
+        <h3>Trimbakeshwar</h3>
+        <p class="where">Kushavarta Kund · the river's source</p>
+        <p class="tagline">Where the Godavari is born, beside a Jyotirlinga.</p>
+        <dl>
+          <div class="spec"><dt>Distance</dt><dd>~30 km west of Nashik</dd></div>
+          <div class="spec"><dt>The water</dt><dd>Kushavarta Kund, the symbolic source of the Godavari</dd></div>
+          <div class="spec"><dt>Who gathers</dt><dd>The Shaiva akharas — and the Udasin and Sanyasi orders who follow Shiva — are traditionally recorded as bathing here, beside one of the twelve Jyotirlingas</dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <p class="caution reveal d3"><b>A note on the orders.</b> The pairing above — Shaiva at Trimbakeshwar, Vaishnava at Nashik — is the commonly recorded arrangement, traced to a separation made by the Peshwas after deadly clashes between the sects centuries ago. Even so, accounts differ in their detail and arrangements can change from one mela to the next. Treat this as background, and confirm the current plan with local authorities before you travel.</p>
+  </div>
+</section>
+
+<!-- ============================ KEY DATES ============================ -->
+<section class="section" id="dates" aria-labelledby="dates-title">
+  <div class="wrap">
+    <p class="kicker reveal">Key dates</p>
+    <h2 class="lede reveal d1" id="dates-title">The shape of the gathering.</h2>
+    <p class="prose reveal d2">Every date here is <strong>expected</strong> and may shift. Confirm each closer to the event with local authorities and the organising committee.</p>
+
+    <ol class="timeline reveal d2">
+      <li class="event">
+        <p class="what">Opening</p>
+        <p class="when">~31 October 2026 · Dhwajaarohan</p>
+        <p class="ev-note">Flag-hoisting. The akhara banners rise and the long mela formally begins.</p>
+        <span class="expected">Expected · confirm closer</span>
+      </li>
+      <li class="event peak">
+        <p class="what">First royal bath</p>
+        <p class="when">2 August 2027 · Amrit Snan</p>
+        <p class="ev-note">The first Shahi / Amrit Snan. Akharas process to the water before dawn.</p>
+        <span class="expected">Expected · confirm closer</span>
+      </li>
+      <li class="event peak">
+        <p class="what">Second royal bath</p>
+        <p class="when">31 August 2027 · Amrit Snan</p>
+        <p class="ev-note">Often the principal bathing day, and typically the most crowded.</p>
+        <span class="expected">Expected · confirm closer</span>
+      </li>
+      <li class="event peak">
+        <p class="what">Third royal bath</p>
+        <p class="when">11–12 September 2027 · Amrit Snan</p>
+        <p class="ev-note">The final great bath of the principal season.</p>
+        <span class="expected">Expected · confirm closer</span>
+      </li>
+      <li class="event">
+        <p class="what">Conclusion</p>
+        <p class="when">~24 July 2028 · Dhwajavarohan</p>
+        <p class="ev-note">Flag-lowering. The waters settle; the gathering disperses for another twelve years.</p>
+        <span class="expected">Expected · confirm closer</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ PRACTICAL ============================ -->
+<section class="section section--light" id="plan" aria-labelledby="plan-title">
+  <div class="wrap">
+    <p class="kicker reveal">Before you go</p>
+    <h2 class="lede reveal d1" id="plan-title">Travel gently. Travel prepared.</h2>
+
+    <div class="cards">
+      <article class="info reveal d2">
+        <h3><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 12h18M3 12l4-7M3 12l4 7M21 12l-4-7M21 12l-4 7"/></svg> Reaching Nashik</h3>
+        <div class="row"><b>Rail</b><span>Nashik Road station, about 8 km from the old city, on the Mumbai–Bhusawal line. Expect special trains and very heavy demand around the bathing days — book early.</span></div>
+        <div class="row"><b>Road</b><span>By bus or car from Mumbai (~165 km) or Pune (~210 km) on national highways. Roads near the ghats close to traffic on peak days; park on the outskirts and walk in.</span></div>
+        <div class="row"><b>Air</b><span>Nearest airports are Nashik (Ozar), with limited flights, and Mumbai (~170 km) for wider connections, then onward by train or road.</span></div>
+      </article>
+
+      <article class="info reveal d3">
+        <h3><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Where crowds gather</h3>
+        <p>The densest crowds form at <b>Ram Kund</b> in Nashik and <b>Kushavarta Kund</b> in Trimbakeshwar on the three royal bathing days. Approach roads begin to fill many hours before dawn.</p>
+        <p style="margin-top:.8rem">If your aim is calm darshan rather than the spectacle, the long stretches between the peaks are far easier — and just as meaningful.</p>
+      </article>
+
+      <article class="info reveal d2">
+        <h3><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/><path d="M9 12l2 2 4-4"/></svg> Staying safe in the crowd</h3>
+        <ul>
+          <li class="row" style="border:0;padding:.35rem 0">Agree a meeting point and a time before you set out — phone networks falter when millions gather in one place.</li>
+          <li class="row" style="border:0;padding:.35rem 0">Give anyone travelling with elders or children a written card with a contact number.</li>
+          <li class="row" style="border:0;padding:.35rem 0">Move with the flow, never against it. Follow marshals, barriers, and the marked bathing slots.</li>
+          <li class="row" style="border:0;padding:.35rem 0">Note the nearest first-aid and lost-persons points when you arrive.</li>
+        </ul>
+      </article>
+
+      <article class="info reveal d3">
+        <h3><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg> What to carry</h3>
+        <ul class="checklist">
+          <li>Water</li><li>Light food</li><li>A hat</li><li>Basic medicines</li><li>A small torch</li><li>Cash in small notes</li><li>Dry clothes in a waterproof bag</li><li>Footwear you can slip off</li><li>A power bank</li><li>ID</li>
+        </ul>
+      </article>
+
+      <article class="info gentle reveal d2">
+        <h3><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" style="color:var(--marigold)"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.4"/></svg> The gentler days</h3>
+        <p>If you can, avoid the three royal-bath peaks. The mela runs for the better part of a year. On an ordinary morning the ghats are calm, the queues short, and the river quiet — <b>no less holy for being unhurried.</b> For many, this is the truer pilgrimage.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CLOSING ============================ -->
+<section class="closing" aria-labelledby="close-title">
+  <h2 class="final" id="close-title">Millions will come — and each will stand alone with the Godavari.</h2>
+
+  <div class="diya-wrap" aria-hidden="true">
+    <svg width="120" height="150" viewBox="0 0 120 150" role="img" aria-label="A single oil lamp floating on dark water, its flame burning steadily.">
+      <circle cx="60" cy="64" r="46" fill="url(#diyaGlow2)"/>
+      <defs>
+        <radialGradient id="diyaGlow2" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#ffd98a" stop-opacity=".8"/>
+          <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g class="diya">
+        <g class="flame-grp"><path d="M60,64 C52,52 56,38 60,28 C64,38 68,52 60,64 Z" fill="#ffce6a"/>
+          <path d="M60,60 C56,53 58,45 60,40 C62,45 64,53 60,60 Z" fill="#fff0c0"/></g>
+        <path d="M34,78 q26,20 52,0 q-10,10 -26,10 q-16,0 -26,-10 Z" fill="#8a4322"/>
+        <path d="M34,78 q26,16 52,0" fill="none" stroke="#c87a3c" stroke-width="2"/>
+      </g>
+      <ellipse class="diya-reflection" cx="60" cy="116" rx="30" ry="7" fill="#ffce6a" opacity=".3"/>
+    </svg>
+  </div>
+
+  <p class="disclaimer"><strong>Independent informational guide.</strong> Verify all dates and arrangements with local authorities before travel.</p>
+  <p class="fineprint">All dates and figures here are approximate and may change. This site is not affiliated with any government body, religious organisation, or the festival's organising committee. May your journey be gentle, whoever you are and wherever you have come from.</p>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <p class="blessing">Once in twelve years, the water remembers.</p>
+  <p>An independent visitor guide to the Nashik–Trimbakeshwar Simhastha Kumbh Mela 2027. Built for quiet, careful planning.</p>
+  <p style="margin-top:.8rem">© <span id="yr">2026</span> · Verify everything before you travel.</p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Year ---------- */
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---------- Sticky header shade ---------- */
+  var head = document.getElementById('siteHead');
+  var onScrollHead = function () {
+    if (head) head.classList.toggle('is-stuck', window.scrollY > 40);
+  };
+  onScrollHead();
+  window.addEventListener('scroll', onScrollHead, { passive: true });
+
+  /* ---------- Countdown to the next sacred bathing day (auto-advances) ---------- */
+  // Times anchored to India Standard Time (+05:30) so they are correct in any timezone.
+  var SNANS = [
+    { label: 'First Amrit Snan · 2 August 2027',        t: Date.parse('2027-08-02T04:30:00+05:30') },
+    { label: 'Second Amrit Snan · 31 August 2027',      t: Date.parse('2027-08-31T04:30:00+05:30') },
+    { label: 'Third Amrit Snan · 11 September 2027',    t: Date.parse('2027-09-11T04:30:00+05:30') }
+  ];
+  var elT = document.getElementById('cdTarget'),
+      elD = document.getElementById('cdD'), elH = document.getElementById('cdH'),
+      elM = document.getElementById('cdM'), elS = document.getElementById('cdS'),
+      elClock = document.getElementById('cdClock'), elDone = document.getElementById('cdDone'),
+      elSR = document.getElementById('cdSR');
+  var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+
+  function nextSnan(now) {
+    for (var i = 0; i < SNANS.length; i++) { if (SNANS[i].t > now) return SNANS[i]; }
+    return null;
+  }
+  function tick() {
+    var now = Date.now();
+    var target = nextSnan(now);
+    if (!target) {
+      if (elClock) elClock.hidden = true;
+      if (elT) elT.textContent = 'The season has passed';
+      if (elDone) { elDone.hidden = false; elDone.textContent = 'The waters have received them. Until Jupiter turns again.'; }
+      if (elSR) elSR.textContent = 'The bathing season has concluded.';
+      return false; // stop ticking
+    }
+    if (elT) elT.textContent = target.label;
+    var diff = target.t - now;
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    if (elD) elD.textContent = d;
+    if (elH) elH.textContent = pad(h);
+    if (elM) elM.textContent = pad(m);
+    if (elS) elS.textContent = pad(s);
+    if (elSR) elSR.textContent = d + ' days until the ' + target.label;
+    return true;
+  }
+  if (elT) {
+    if (tick()) {
+      var cdTimer = setInterval(function () { if (!tick()) clearInterval(cdTimer); }, 1000);
+    }
+  }
+
+  /* ---------- "Which day should I go?" filter ---------- */
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var days  = Array.prototype.slice.call(document.querySelectorAll('#dayList .day'));
+  var hint  = document.getElementById('filterHint');
+  var status = document.getElementById('filterStatus');
+
+  function applyFilter() {
+    var active = chips.filter(function (c) { return c.getAttribute('aria-pressed') === 'true'; })
+                      .map(function (c) { return c.getAttribute('data-goal'); });
+    var shown = 0;
+    days.forEach(function (day) {
+      var goals = (day.getAttribute('data-goals') || '').split(' ');
+      var match = active.length === 0 || active.some(function (g) { return goals.indexOf(g) > -1; });
+      day.hidden = !match;
+      if (match) shown++;
+    });
+    var msg = active.length === 0
+      ? 'Showing all days.'
+      : 'Showing ' + shown + ' day' + (shown === 1 ? '' : 's') + ' that match what you seek.';
+    if (hint) hint.textContent = msg;
+    if (status) status.textContent = msg;
+  }
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+      applyFilter();
+    });
+  });
+
+  /* ---------- Reveal on scroll (only animates when motion is allowed) ---------- */
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if (REDUCE || !('IntersectionObserver' in window)) {
+    reveals.forEach(function (el) { el.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- Gentle hero parallax (motion only) ---------- */
+  if (!REDUCE) {
+    var scene = document.querySelector('.hero-scene');
+    var ticking = false;
+    var park = function () {
+      if (scene) {
+        var y = window.scrollY;
+        if (y < window.innerHeight * 1.2) scene.style.transform = 'translateY(' + (y * 0.18) + 'px)';
+      }
+      ticking = false;
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(park); }
+    }, { passive: true });
+  }
+
+  /* ---------- Starfield for the astronomy section (motion-aware twinkle) ---------- */
+  var field = document.getElementById('skyField');
+  if (field) {
+    var W = 400, H = 300, NS = 'http://www.w3.org/2000/svg';
+    field.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < 46; i++) {
+      var c = document.createElementNS(NS, 'circle');
+      c.setAttribute('cx', (Math.random() * W).toFixed(1));
+      c.setAttribute('cy', (Math.random() * H).toFixed(1));
+      c.setAttribute('r', (Math.random() * 1.1 + 0.3).toFixed(2));
+      c.setAttribute('fill', '#fff');
+      c.setAttribute('opacity', (Math.random() * 0.5 + 0.15).toFixed(2));
+      if (!REDUCE) {
+        c.setAttribute('class', 'twinkle' + (i % 3 === 1 ? ' b' : i % 3 === 2 ? ' c' : ''));
+      }
+      frag.appendChild(c);
+    }
+    field.appendChild(frag);
+  }
+})();
+</script>
+</body>
+</html>
