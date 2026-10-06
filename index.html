@@ -327,6 +327,47 @@ html.motion .diya-reflection{animation:bobref 5.5s ease-in-out infinite}
 .site-foot a{color:var(--saffron)}
 .site-foot .blessing{font-family:var(--serif);font-style:italic;color:var(--cream);font-size:1rem;margin-bottom:1rem}
 
+/* =====================================================================
+   REAL CALENDAR — data-driven from data/calendar.json
+   ===================================================================== */
+.cal-status{margin-top:1.4rem;font-size:.92rem;color:var(--muted-light)}
+.cal-status a{color:var(--saffron-deep)}
+.cal-bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-top:1.6rem}
+.cal-bar select{
+  font:inherit;font-size:.9rem;padding:.55rem .7rem;border-radius:.5rem;
+  border:1px solid var(--line-light);background:#fbf7ef;color:var(--ink);min-height:44px;
+}
+.cal-bar .count{font-size:.86rem;color:var(--muted-light);margin-left:auto}
+.cal-grid{display:grid;gap:.9rem;margin-top:1.6rem}
+@media (min-width:680px){ .cal-grid{grid-template-columns:1fr 1fr} }
+@media (min-width:1040px){ .cal-grid{grid-template-columns:1fr 1fr 1fr} }
+.cal-day{
+  border:1px solid var(--line-light);border-radius:.8rem;padding:1rem 1.1rem;background:#fbf7ef;
+}
+.cal-day.is-peak{border-color:rgba(184,67,31,.4);background:#fdf6f1}
+.cal-day[hidden]{display:none}
+.cal-top{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem}
+.cal-date{font-family:var(--serif);font-size:1.08rem;color:var(--ink)}
+.cal-kind{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron-deep);font-weight:600}
+.cal-meta{margin-top:.35rem;font-size:.8rem;color:var(--muted-light)}
+.cal-reason{margin-top:.6rem;font-size:.9rem;color:var(--muted-light)}
+.cal-day details{margin-top:.7rem}
+.cal-day summary{
+  cursor:pointer;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--saffron-deep);font-weight:600;min-height:32px;display:inline-flex;align-items:center;
+}
+.cal-pts{list-style:none;margin-top:.6rem;border-top:1px solid var(--line-light);padding-top:.6rem}
+.cal-pts li{
+  display:flex;gap:.6rem;justify-content:space-between;font-size:.84rem;
+  color:var(--muted-light);padding:.28rem 0;
+}
+.cal-pts b{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;flex:0 0 2.4rem;text-align:right}
+.cal-note{
+  margin-top:1.8rem;padding:1.1rem 1.3rem;border:1px dashed var(--line-light);border-radius:.7rem;
+  color:var(--muted-light);font-size:.9rem;max-width:72ch;
+}
+.cal-note b{color:var(--saffron-deep)}
+
 /* ---------- Reduced motion: stop everything moving ---------- */
 @media (prefers-reduced-motion: reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -344,6 +385,7 @@ html.motion .diya-reflection{animation:bobref 5.5s ease-in-out infinite}
     <a href="#why">Why now</a>
     <a href="#choose">Which day</a>
     <a href="#waters">Two waters</a>
+    <a href="#calendar">All days</a>
     <a href="#dates">Dates</a>
     <a href="#plan">Plan</a>
   </nav>
@@ -706,6 +748,48 @@ html.motion .diya-reflection{animation:bobref 5.5s ease-in-out infinite}
   </div>
 </section>
 
+<!-- ============================ REAL CALENDAR (data-driven) ============================ -->
+<section class="section" id="calendar" aria-labelledby="calendar-title">
+  <div class="wrap">
+    <p class="kicker reveal">Every auspicious day</p>
+    <h2 class="lede reveal d1" id="calendar-title">Not three days. Every one of them.</h2>
+    <p class="prose reveal d2">
+      This table is generated, not hand-written. Every tithi comes from a Swiss Ephemeris
+      computation and every crowd band from published rules you can inspect. Three days are
+      royal baths; the rest are ordinary, equally sacred, and far quieter.
+    </p>
+
+    <p class="cal-status reveal" id="calStatus">Loading the calendar&hellip;</p>
+
+    <div class="cal-bar reveal d2" id="calBar" hidden>
+      <label class="visually-hidden" for="calBand">Filter by estimated crowd</label>
+      <select id="calBand">
+        <option value="">All crowd levels</option>
+        <option value="very_high">Very High</option>
+        <option value="high">High</option>
+        <option value="moderate">Moderate</option>
+        <option value="lower">Lower</option>
+      </select>
+      <label class="visually-hidden" for="calKind">Filter by day type</label>
+      <select id="calKind">
+        <option value="">All day types</option>
+        <option value="amrit_snan">Royal bath (Amrit Snan)</option>
+        <option value="parva_snan_major">Major bathing day</option>
+        <option value="auspicious_minor">Auspicious day</option>
+      </select>
+      <span class="count" id="calCount"></span>
+    </div>
+
+    <div class="cal-grid reveal d3" id="calGrid"></div>
+
+    <p class="cal-note reveal d3">
+      <b>These are estimates.</b> The crowd band comes from a transparent rule set, not from
+      measured attendance, and a wrong date would be worse than no date at all. Confirm every
+      date with the mela authorities before you travel.
+    </p>
+  </div>
+</section>
+
 <!-- ============================ CLOSING ============================ -->
 <section class="closing" aria-labelledby="close-title">
   <h2 class="final" id="close-title">Millions will come — and each will stand alone with the Godavari.</h2>
@@ -833,6 +917,130 @@ html.motion .diya-reflection{animation:bobref 5.5s ease-in-out infinite}
       applyFilter();
     });
   });
+
+  /* ---------- Real calendar, rendered from data/calendar.json ----------
+     The countdown SNANS above stays as the no-JS fallback; once the data
+     loads we re-anchor it to the computed Amrit Snan dates instead. */
+  var calStatus = document.getElementById('calStatus'),
+      calBar = document.getElementById('calBar'),
+      calGrid = document.getElementById('calGrid'),
+      calCount = document.getElementById('calCount'),
+      calBand = document.getElementById('calBand'),
+      calKind = document.getElementById('calKind');
+
+  var KIND_LABEL = {
+    amrit_snan: 'Royal bath',
+    parva_snan_major: 'Major bathing day',
+    auspicious_minor: 'Auspicious day'
+  };
+  var DOT_CLASS = { very_high: 'level-high', high: 'level-high', moderate: 'level-medium', lower: 'level-low' };
+
+  function fmtDate(iso) {
+    var d = new Date(iso + 'T12:00:00+05:30');
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function renderCalDays(cal) {
+    var days = cal.days || [];
+    calGrid.textContent = '';
+
+    days.forEach(function (d) {
+      var card = el('div', 'cal-day' + (d.classification === 'amrit_snan' ? ' is-peak' : ''));
+      card.setAttribute('data-band', d.band.key);
+      card.setAttribute('data-kind', d.classification);
+
+      var top = el('div', 'cal-top');
+      top.appendChild(el('span', 'cal-date', fmtDate(d.gregorian_date)));
+      top.appendChild(el('span', 'cal-kind', KIND_LABEL[d.classification] || 'Auspicious day'));
+      card.appendChild(top);
+
+      var meter = el('span', 'meter ' + (DOT_CLASS[d.band.key] || 'level-low'));
+      var dots = el('span', 'dots');
+      dots.appendChild(el('i')); dots.appendChild(el('i')); dots.appendChild(el('i'));
+      meter.appendChild(dots);
+      meter.appendChild(document.createTextNode(d.band.label_en));
+      card.appendChild(meter);
+
+      var p = d.panchang || {};
+      card.appendChild(el('p', 'cal-meta',
+        [p.tithi, p.nakshatra, p.masa].filter(Boolean).join(' · ') + (p.weekday ? ' · ' + p.weekday : '')));
+
+      card.appendChild(el('p', 'cal-reason', d.headline_reason));
+
+      var det = document.createElement('details');
+      var sum = document.createElement('summary');
+      sum.textContent = 'How this was calculated';
+      det.appendChild(sum);
+      var ul = el('ul', 'cal-pts');
+      (d.breakdown || []).forEach(function (b) {
+        var li = document.createElement('li');
+        li.appendChild(el('span', null, b.reason));
+        var pts = b.points > 0 ? '+' + b.points : String(b.points);
+        li.appendChild(el('b', null, pts));
+        ul.appendChild(li);
+      });
+      det.appendChild(ul);
+      card.appendChild(det);
+
+      card.dataset.bandHi = d.band.label_hi;
+      card.dataset.bandMr = d.band.label_mr;
+      calGrid.appendChild(card);
+    });
+
+    /* re-anchor the countdown to the computed royal-bath dates */
+    var snans = days.filter(function (d) { return d.classification === 'amrit_snan'; });
+    if (snans.length) {
+      SNANS = snans.map(function (d) {
+        return { label: 'Amrit Snan · ' + fmtDate(d.gregorian_date), t: Date.parse(d.gregorian_date + 'T04:30:00+05:30') };
+      });
+      if (typeof tick === 'function') tick();
+    }
+
+    applyCalFilter();
+  }
+
+  function applyCalFilter() {
+    var b = calBand ? calBand.value : '', k = calKind ? calKind.value : '', shown = 0;
+    Array.prototype.forEach.call(calGrid.children, function (card) {
+      var match = (!b || card.getAttribute('data-band') === b) && (!k || card.getAttribute('data-kind') === k);
+      card.hidden = !match;
+      if (match) shown++;
+    });
+    if (calCount) {
+      calCount.textContent = shown + ' of ' + calGrid.children.length + ' days shown';
+    }
+  }
+
+  if (calGrid && window.fetch) {
+    fetch('data/calendar.json')
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (cal) {
+        renderCalDays(cal);
+        if (calStatus) {
+          var first = (cal.days[0] || {}).gregorian_date || '—',
+              last = (cal.days[cal.days.length - 1] || {}).gregorian_date || '—';
+          calStatus.textContent = '';
+          calStatus.appendChild(document.createTextNode(
+            'Showing all ' + (cal.day_count || cal.days.length) + ' auspicious days, ' +
+            first + ' to ' + last + '. Table v' + cal.table_version + '. '));
+          calStatus.appendChild(el('b', null, 'These are estimates.'));
+        }
+        if (calBar) calBar.hidden = false;
+      })
+      .catch(function () {
+        if (calStatus) calStatus.textContent =
+          'The generated calendar could not be loaded. The summary dates above still apply.';
+      });
+    if (calBand) calBand.addEventListener('change', applyCalFilter);
+    if (calKind) calKind.addEventListener('change', applyCalFilter);
+  }
 
   /* ---------- Reveal on scroll (only animates when motion is allowed) ---------- */
   var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
